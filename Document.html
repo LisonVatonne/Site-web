@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="Data.js"></script>
+
+        <script>
+
+            function FirstLaunch()
+            {
+                var fold = HtmlManipulator.GetFolder();
+                var file = HtmlManipulator.GetFile();
+    
+                console.log("Documents/" + fold + "/" +  file + ".pdf")
+
+                document.getElementById("PdfContainer").data = "Documents/" + fold + "/" +  file + ".pdf";
+                document.getElementById("Telechargement").href = "Documents/" + fold + "/" + file + ".pdf";
+                document.getElementById("Telechargement").innerHTML = file + ".pdf";
+                document.getElementById("Titre").innerHTML =  file + ".pdf";
+                document.getElementById("TitrePage").innerHTML =  file + ".pdf";
+            }
+        </script>
+        <style type="text/css">
+
+            .recherche{
+              
+              padding:0;
+              border:0;
+              overflow-y: hidden;
+              text-align: center;
+              align-content: center;
+            }
+       
+            object {
+              display:block;
+              width: 100%;
+            }
+      
+      
+          </style>
+        <title id="Titre">Fichier_client_micronet.pdf</title>
+
+
+    </head>
+    <body onload="FirstLaunch(); SetupPage()" style="height: 100%; margin:auto;">
+
+
+        <div style="text-align: center; align-content: center; width: 80%; margin: auto;">
+            <div style="height: 10%;">
+                <label id="TitrePage" style="height: 10%; font-size: 30pt;">
+        
+                </label>
+            </div>
+            <object id="PdfContainer" data="Fichier_client_micronet.pdf" type="application/pdf" class="recherche" style="height: 90%;">
+                <p class="recherche">Télécharger : <a href="Fichier_client_micronet.pdf" id="Telechargement">Fichier_client_micronet.pdf</a></p>
+            </object>
+        </div>
+
+    </body>
+</html>
